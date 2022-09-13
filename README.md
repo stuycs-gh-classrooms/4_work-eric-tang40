@@ -1,4 +1,4 @@
 # Work For NeXT CS
-### Name: YOUR NAME HERE
+### Name: Eric Tang
 ### Class Period:
 ---
