@@ -31,9 +31,12 @@ void draw() {
   //circle
   drawCircle(angle, circRadius, width/2, sinAmplitude*2 + circRadius);
   //concentric circles
-  //rawCircle(angle, spiralRadius, width/2, sinAmplitude*2 + circRadius*3);
+  drawCircle(angle, spiralRadius, width/2, sinAmplitude*2 + circRadius*3);
 
   angle++; //moves the sin graph to the right
+  if(angle%360 == 0) {
+    spiralRadius-=7;
+  }
 }//draw
 
 void drawSinCurve(int degrees, int amplitude, int yOffset) {
@@ -51,13 +54,5 @@ void drawSinCurve(int degrees, int amplitude, int yOffset) {
   }
 }
 void drawCircle(int degrees, int radius, int xOffset, int yOffset) {
-  circle(sx, sy, 1);
-  print("sx: " + sx+ " ");
-  sx += cos(radians(degrees));
-  sy += sin(radians(degrees));
-  if(degrees>width) {
-    angle = 0;
-    sx=width/2;
-    sy=width/2;
+  circle(cos(radians(degrees)) * radius + xOffset, sin(radians(degrees)) * radius + yOffset, 5);
   }
-}
